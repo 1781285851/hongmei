@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-@SpringBootApplication(exclude={JpaRepositoriesAutoConfiguration.class})	//禁止springboot自动加载持久化bean
+@SpringBootApplication	//禁止springboot自动加载持久化bean
 @EnableEurekaClient //本服务启动后会自动注册进eureka服务中
 public class HongMei8001App
 {

@@ -12,9 +12,9 @@ public class EmployeeService {
     @Autowired
     private EmployeeDao employeeDao;
 
-    ////根据姓名查询用户基本信息
-    public Employee findByNameService(String name){
-        return employeeDao.findByName(name);
+    //根据code查询用户基本信息
+    public Employee findByNameService(String code){
+        return employeeDao.findByName(code);
     }
 
     //查询所有用户
@@ -28,13 +28,24 @@ public class EmployeeService {
             employeeDao.addEmployee(employee);
             return true;
         } catch (Exception e) {
+            //1.获取异常信息，参数
+            System.out.println(e.getMessage());
+            //2.获取异常类名和异常信息
+            System.out.println(e.toString());
+            //3.获取异常类名和异常信息，及出现异常的位置
+            e.printStackTrace();
             return false;
         }
     }
 
-    //删除用户
-    public void removeByNameService(String name){
-        employeeDao.removeByName(name);
+    //根据code删除用户
+    public Boolean removeByNameService(String code){
+        try {
+            employeeDao.alertStatus(code);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 

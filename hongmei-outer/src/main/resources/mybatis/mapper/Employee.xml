@@ -2,20 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.info.dao.EmployeeDao">
 
-  <select id="findByName" resultType="Employee" parameterType="String">
-   select ID id,code code,name name,gender gender,password password,phone phone,desceiption desceiption,role_id roleId from EMPLOYEE where name = #{name}
+  <select id="findByName" resultType="com.info.entity.Employee" parameterType="String">
+   select * from EMPLOYEE where status = 1 where code = #{code}
   </select>
 
-  <select id="findAll" resultType="Employee">
-   select * from EMPLOYEE
+  <select id="findAll" resultType="com.info.entity.Employee">
+   select * from EMPLOYEE where status = 1
   </select>
 
   <insert id="addEmployee" parameterType="Employee">
-   INSERT INTO EMPLOYEE VALUES(#{id},#{code},#{name},#{gender},#{password},#{phone},#{desceiption},#{roleId})
+   INSERT INTO EMPLOYEE VALUES(#{id},#{code},#{name},#{gender},#{password},#{phone},#{description},#{auth},1)
   </insert>
-    
-   <delete id="removeByName" parameterType="String">
-       DELETE from EMPLOYEE where name = #{name}
-   </delete>
+
+    <update id="alertStatus" parameterType="String">
+        update EMPLOYEE set status = 0 where code = #{code}
+    </update>
+
+
+
 
 </mapper>

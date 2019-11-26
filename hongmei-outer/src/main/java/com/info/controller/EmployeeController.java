@@ -10,6 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.log4j.Log4j;
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -37,11 +38,11 @@ public class EmployeeController {
 
     @ApiOperation(value = "查看用户信息")
     @GetMapping(value="/", produces = MediaType.APPLICATION_JSON_VALUE)
-    private @ResponseBody SoftworksResponse<Employee> detail(@ApiParam("用户名") @RequestParam(value = "name", required = true) String name){
-        log.info("获取业务评价详细信息 id =" + name);
-        Employee employee = employeeService.findByNameService(name);
+    private @ResponseBody SoftworksResponse<Employee> detail(@ApiParam("用户code") @RequestParam(value = "code") String code){
+        log.info("获取业务评价详细信息 id = " + code);
+        Employee employee = employeeService.findByNameService(code);
         if (null != employee)
-        return SoftworksResponse.success(employeeService.findByNameService(name));
+        return SoftworksResponse.success(employeeService.findByNameService(code));
         return SoftworksResponse.failure(MessageCode.COMMON_USER_NOT_EXIST);
     }
 
@@ -64,7 +65,13 @@ public class EmployeeController {
         return SoftworksResponse.success(page);
     }
 
-
+    @ApiOperation(value = "删除用户")
+    @DeleteMapping(value="/", produces = MediaType.APPLICATION_JSON_VALUE)
+    private @ResponseBody SoftworksResponse<Boolean> remove(@ApiParam("用户code") @RequestParam(value = "code") String code){
+        log.info("删除用户 = " + code);
+        Boolean result = employeeService.removeByNameService(code);
+        return SoftworksResponse.success(result);
+    }
 
 
 }

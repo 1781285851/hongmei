@@ -1,0 +1,16 @@
+swagger:
+  enable: true  #是否开启Swagger
+  api-info:
+    description: 鸿美系统
+#    license: ${spring.application.name}
+#    license-url: http://www.inforsw.com
+    terms-of-service-url: http://www.inforsw.com
+    title: 三只快乐的小青蛙
+    version: "${application.version}"
+    contact:
+      email: 123456789@qq.com
+      name: 日记
+#      url: http://www.inforsw.com
+  docket:
+    base-package: com.info.controller    #扫描路径，建议以Controller的父包为主
+    group-name: ${spring.application.name}
