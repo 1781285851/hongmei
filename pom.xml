@@ -11,6 +11,8 @@
     <modules>
         <module>hongmei-outer</module>
         <module>hongmei-eureka</module>
+        <module>hongmei-common</module>
+        <module>hongmei-swagger</module>
     </modules>
 
     <properties>

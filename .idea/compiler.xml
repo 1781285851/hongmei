@@ -7,6 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hongmeiouter" />
+        <module name="hongmeicommon" />
+        <module name="hongmeiswagger" />
         <module name="hongmeieureka" />
       </profile>
     </annotationProcessing>

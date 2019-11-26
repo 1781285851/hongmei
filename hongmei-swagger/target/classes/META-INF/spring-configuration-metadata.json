@@ -1,0 +1,27 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.info.SwaggerProperties",
+      "name": "swagger",
+      "type": "com.info.SwaggerProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.info.SwaggerProperties",
+      "name": "swagger.api-info",
+      "type": "com.info.properties.SoftworksApiInfoProperties"
+    },
+    {
+      "sourceType": "com.info.SwaggerProperties",
+      "name": "swagger.docket",
+      "type": "com.info.properties.SoftworksDocketProperties"
+    },
+    {
+      "sourceType": "com.info.SwaggerProperties",
+      "name": "swagger.enable",
+      "type": "java.lang.Boolean"
+    }
+  ]
+}

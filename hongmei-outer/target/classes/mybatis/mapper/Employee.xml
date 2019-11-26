@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.info.dao.EmployeeDao">
+
+  <select id="findByName" resultType="Employee" parameterType="String">
+   select ID id,code code,name name,gender gender,password password,phone phone,desceiption desceiption,role_id roleId from EMPLOYEE where name = #{name}
+  </select>
+
+  <select id="findAll" resultType="Employee">
+   select * from EMPLOYEE
+  </select>
+
+  <insert id="addEmployee" parameterType="Employee">
+   INSERT INTO EMPLOYEE VALUES(#{id},#{code},#{name},#{gender},#{password},#{phone},#{desceiption},#{roleId})
+  </insert>
+    
+   <delete id="removeByName" parameterType="String">
+       DELETE from EMPLOYEE where name = #{name}
+   </delete>
+
+</mapper>

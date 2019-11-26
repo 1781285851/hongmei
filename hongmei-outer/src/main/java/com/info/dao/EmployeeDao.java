@@ -2,6 +2,7 @@ package com.info.dao;
 
 import com.info.entity.Employee;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

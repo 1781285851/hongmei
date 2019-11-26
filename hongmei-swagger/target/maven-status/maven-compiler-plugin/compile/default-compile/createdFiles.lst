@@ -1,0 +1,7 @@
+com\info\SwaggerAutoConfiguration.class
+com\info\SwaggerProperties.class
+com\info\properties\SoftworksContact.class
+com\info\properties\SoftworksDocketProperties.class
+com\info\properties\SoftworksApiParamType.class
+META-INF\spring-configuration-metadata.json
+com\info\properties\SoftworksApiInfoProperties.class
